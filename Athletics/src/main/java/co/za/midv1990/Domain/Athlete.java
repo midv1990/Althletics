@@ -1,7 +1,7 @@
 package co.za.midv1990.Domain;
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 /**
  * Created by Ihsaan on 2017/08/08.
@@ -17,6 +17,9 @@ public class Athlete implements Serializable {
     public int getAge() {return age;}
 
     //constructor
+
+    private Athlete(){}
+
     public Athlete(Builder build) {
         this.name = build.name;
         this.surname = build.surname;
@@ -50,6 +53,8 @@ public class Athlete implements Serializable {
             this.age = value;
             return this;
         }
+
+        public Athlete build(){return new Athlete(this);}
     }
 
     @Override
